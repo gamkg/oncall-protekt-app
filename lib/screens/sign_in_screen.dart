@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../theme/theme_provider.dart';
 import '../theme/app_themes.dart';
-import '../widgets/theme_toggle_pill.dart';
 import 'app_shell.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -23,20 +22,19 @@ class SignInScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  const SizedBox(height: 48),
+                  const SizedBox(height: 16),
                   // Logo
                   Container(
-                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: isSentinel
-                          ? Border.all(color: AppColors.accent.withValues(alpha: 0.3), width: 2)
-                          : null,
-                      boxShadow: isSentinel
-                          ? [BoxShadow(color: extras?.glowColor ?? Colors.transparent, blurRadius: 20)]
-                          : null,
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.colorScheme.primary.withValues(alpha: 0.25),
+                          blurRadius: 40,
+                          spreadRadius: -10,
+                        ),
+                      ],
                     ),
-                    child: Image.asset('assets/ocp-logo.png', height: 80),
+                    child: Image.asset('assets/ocp-logo.png', height: 180),
                   ),
                   const SizedBox(height: 24),
                   // Title
@@ -189,8 +187,8 @@ class SignInScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           _statusItem(context, 'SYSTEM\nONLINE', Colors.green),
-                          _statusItem(context, 'ENCRYPTION\nv4.2.0', AppColors.accent),
-                          _statusItem(context, 'PROXY\nPROTECTED', AppColors.accent),
+                          _statusItem(context, 'ENCRYPTION\nv4.2.0', theme.colorScheme.primary),
+                          _statusItem(context, 'PROXY\nPROTECTED', theme.colorScheme.primary),
                         ],
                       ),
                     ),
@@ -200,11 +198,7 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            top: 50,
-            right: 16,
-            child: ThemeTogglePill(),
-          ),
+          // Theme toggle removed - controlled from web preview shell
         ],
       ),
     );

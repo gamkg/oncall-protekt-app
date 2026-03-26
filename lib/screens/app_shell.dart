@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/theme_toggle_pill.dart';
 import 'my_jobs_screen.dart';
 import 'notifications_screen.dart';
 import 'profile_screen.dart';
@@ -27,18 +26,9 @@ class _AppShellState extends State<AppShell> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      body: Stack(
-        children: [
-          IndexedStack(
-            index: _currentIndex,
-            children: _pages,
-          ),
-          const Positioned(
-            top: 50,
-            right: 16,
-            child: ThemeTogglePill(),
-          ),
-        ],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pages,
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(

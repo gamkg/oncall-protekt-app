@@ -1,23 +1,49 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Dark Mode
-  static const dmBackground = Color(0xFF0A0A0A);
-  static const dmSurface = Color(0xFF1A1A1A);
-  static const dmBorder = Color(0xFF2A2A2A);
+  // All themes use V1 Dark Navy + Yellow palette
+  // from oncallprotekt.com/app-redesign/v1
+
+  // Backgrounds
+  static const dmBackground = Color(0xFF0B1121);
+  static const dmSurface = Color(0xFF1A2332);
+  static const dmSurfaceAlt = Color(0xFF1F2937);
+  static const dmBorder = Color(0x1AFFFFFF); // rgba(255,255,255,0.1)
   static const dmTextPrimary = Color(0xFFFFFFFF);
   static const dmTextSecondary = Color(0xFF9CA3AF);
 
-  // Sentinel Dark
-  static const sdBackground = Color(0xFF0D1117);
-  static const sdSurface = Color(0xFF161B22);
-  static const sdBorder = Color(0x3300E5CC);
+  // Sentinel uses same navy palette with subtle yellow glow borders
+  static const sdBackground = Color(0xFF0B1121);
+  static const sdSurface = Color(0xFF111827);
+  static const sdBorder = Color(0x4DFACC15); // rgba(250,204,21,0.3)
   static const sdTextPrimary = Color(0xFFFFFFFF);
-  static const sdTextSecondary = Color(0xFF8B949E);
+  static const sdTextSecondary = Color(0xFF9CA3AF);
 
-  // Shared
-  static const accent = Color(0xFF00E5CC);
-  static const accentGlow = Color(0x3300E5CC);
+  // Shared accent - V1 Yellow
+  static const accent = Color(0xFFFACC15);
+  static const accentGlow = Color(0x4DFACC15); // rgba(250,204,21,0.3)
+  static const onAccent = Color(0xFF0B1121);
+
+  // V1 Mockup specific tokens (same palette, clean variant)
+  static const v1Background = Color(0xFF0B1121);
+  static const v1Surface = Color(0xFF1A2332);
+  static const v1SurfaceAlt = Color(0xFF1F2937);
+  static const v1NavBg = Color(0xFF111827);
+  static const v1Border = Color(0x1AFFFFFF);
+  static const v1Accent = Color(0xFFFACC15);
+  static const v1AccentGlow = Color(0x4DFACC15);
+  static const v1OnAccent = Color(0xFF0B1121);
+  static const v1TextMuted = Color(0xFF6B7280);
+
+  // Nav
+  static const navBg = Color(0xFF111827);
+  static const navInactive = Color(0xFF6B7280);
+
+  // Status
+  static const statusSuccess = Color(0xFF10B981);
+  static const statusWarning = Color(0xFFF59E0B);
+  static const statusDanger = Color(0xFFEF4444);
+  static const statusInfo = Color(0xFF3B82F6);
 }
 
 class AppThemeExtras extends ThemeExtension<AppThemeExtras> {
@@ -88,9 +114,9 @@ final darkModeTheme = ThemeData(
     elevation: 0,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.dmSurface,
+    backgroundColor: AppColors.navBg,
     selectedItemColor: AppColors.accent,
-    unselectedItemColor: AppColors.dmTextSecondary,
+    unselectedItemColor: AppColors.navInactive,
   ),
   textTheme: const TextTheme(
     headlineLarge: TextStyle(color: AppColors.dmTextPrimary, fontWeight: FontWeight.bold),
@@ -124,15 +150,17 @@ final darkModeTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: AppColors.accent,
-      foregroundColor: AppColors.dmBackground,
+      foregroundColor: AppColors.onAccent,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
       textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+      elevation: 0,
+      shadowColor: AppColors.accentGlow,
     ),
   ),
   extensions: const [
     AppThemeExtras(
-      glowColor: Colors.transparent,
+      glowColor: AppColors.accentGlow,
       cardBorderColor: AppColors.dmBorder,
       headerFontFamily: '',
       scanLineOverlay: false,
@@ -164,9 +192,9 @@ final sentinelDarkTheme = ThemeData(
     elevation: 0,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.sdSurface,
+    backgroundColor: AppColors.navBg,
     selectedItemColor: AppColors.accent,
-    unselectedItemColor: AppColors.sdTextSecondary,
+    unselectedItemColor: AppColors.navInactive,
   ),
   textTheme: const TextTheme(
     headlineLarge: TextStyle(
@@ -228,7 +256,7 @@ final sentinelDarkTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: AppColors.accent,
-      foregroundColor: AppColors.sdBackground,
+      foregroundColor: AppColors.onAccent,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
       textStyle: const TextStyle(
@@ -249,3 +277,4 @@ final sentinelDarkTheme = ThemeData(
     ),
   ],
 );
+

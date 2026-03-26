@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../theme/app_themes.dart';
 import '../theme/theme_provider.dart';
 
 class SentinelHeader extends StatelessWidget {
@@ -14,6 +15,8 @@ class SentinelHeader extends StatelessWidget {
 
     if (!isSentinel) return const SizedBox.shrink();
 
+    final accent = Theme.of(context).colorScheme.primary;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Row(
@@ -22,11 +25,11 @@ class SentinelHeader extends StatelessWidget {
             width: 8,
             height: 8,
             decoration: BoxDecoration(
-              color: const Color(0xFF00E5CC),
+              color: accent,
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF00E5CC).withValues(alpha: 0.5),
+                  color: accent.withValues(alpha: 0.5),
                   blurRadius: 6,
                 ),
               ],
@@ -36,14 +39,14 @@ class SentinelHeader extends StatelessWidget {
           Text(
             'SENTINEL',
             style: TextStyle(
-              color: const Color(0xFF00E5CC),
+              color: accent,
               fontFamily: 'FiraCode',
               fontSize: 13,
               fontWeight: FontWeight.bold,
               letterSpacing: 3,
               shadows: [
                 Shadow(
-                  color: const Color(0xFF00E5CC).withValues(alpha: 0.5),
+                  color: accent.withValues(alpha: 0.5),
                   blurRadius: 8,
                 ),
               ],

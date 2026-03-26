@@ -8,6 +8,8 @@ class ThemeTogglePill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tp = context.watch<ThemeProvider>();
+    final accent = Theme.of(context).colorScheme.primary;
+
     return GestureDetector(
       onTap: () => tp.toggle(),
       child: Container(
@@ -15,17 +17,17 @@ class ThemeTogglePill extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.black54,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: const Color(0xFF00E5CC), width: 1),
+          border: Border.all(color: accent, width: 1),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.swap_horiz, color: Color(0xFF00E5CC), size: 14),
+            Icon(Icons.swap_horiz, color: accent, size: 14),
             const SizedBox(width: 4),
             Text(
               tp.otherLabel,
-              style: const TextStyle(
-                color: Color(0xFF00E5CC),
+              style: TextStyle(
+                color: accent,
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
               ),

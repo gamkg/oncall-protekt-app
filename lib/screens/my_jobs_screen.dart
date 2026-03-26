@@ -78,16 +78,16 @@ class _MyJobsScreenState extends State<MyJobsScreen>
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppColors.accent.withValues(alpha: 0.15),
+                          color: theme.colorScheme.primary.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Row(
                           children: [
-                            const Icon(Icons.star, color: AppColors.accent, size: 14),
+                            Icon(Icons.star, color: theme.colorScheme.primary, size: 14),
                             const SizedBox(width: 4),
                             Text('${MockData.rating}',
-                                style: const TextStyle(
-                                    color: AppColors.accent, fontFamily: 'FiraCode', fontSize: 13)),
+                                style: TextStyle(
+                                    color: theme.colorScheme.primary, fontFamily: 'FiraCode', fontSize: 13)),
                           ],
                         ),
                       ),

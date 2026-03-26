@@ -33,7 +33,7 @@ class IPhoneFrame extends StatelessWidget {
                   spreadRadius: 5,
                 ),
                 BoxShadow(
-                  color: const Color(0xFF00E5CC).withValues(alpha: 0.05),
+                  color: const Color(0xFFFACC15).withValues(alpha: 0.05),
                   blurRadius: 60,
                   spreadRadius: -10,
                 ),

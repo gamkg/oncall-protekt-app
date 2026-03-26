@@ -49,16 +49,16 @@ class HelpSupportScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.accent.withValues(alpha: 0.2),
-                    AppColors.accent.withValues(alpha: 0.05),
+                    theme.colorScheme.primary.withValues(alpha: 0.2),
+                    theme.colorScheme.primary.withValues(alpha: 0.05),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(extras?.cardRadius ?? 12),
-                border: Border.all(color: AppColors.accent.withValues(alpha: 0.3)),
+                border: Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
-                  Icon(Icons.chat_bubble_outline, color: AppColors.accent),
+                  Icon(Icons.chat_bubble_outline, color: theme.colorScheme.primary),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(
@@ -78,7 +78,7 @@ class HelpSupportScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(Icons.arrow_forward_ios, color: AppColors.accent, size: 16),
+                  Icon(Icons.arrow_forward_ios, color: theme.colorScheme.primary, size: 16),
                 ],
               ),
             ),
@@ -150,14 +150,14 @@ class HelpSupportScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                         decoration: BoxDecoration(
                           color: inquiry['status'] == 'active'
-                              ? AppColors.accent.withValues(alpha: 0.15)
+                              ? theme.colorScheme.primary.withValues(alpha: 0.15)
                               : Colors.grey.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
                           inquiry['status']!.toUpperCase(),
                           style: TextStyle(
-                            color: inquiry['status'] == 'active' ? AppColors.accent : Colors.grey,
+                            color: inquiry['status'] == 'active' ? theme.colorScheme.primary : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w600,
                           ),
@@ -213,7 +213,7 @@ class HelpSupportScreen extends StatelessWidget {
                   Text(
                     '6900-SENTINEL',
                     style: TextStyle(
-                      color: AppColors.accent,
+                      color: theme.colorScheme.primary,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       fontFamily: isSentinel ? 'FiraCode' : null,

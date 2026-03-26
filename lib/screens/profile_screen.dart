@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: isSentinel
-                      ? Border.all(color: AppColors.accent.withValues(alpha: 0.3), width: 2)
+                      ? Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.3), width: 2)
                       : null,
                   boxShadow: isSentinel
                       ? [BoxShadow(color: extras?.glowColor ?? Colors.transparent, blurRadius: 12)]
@@ -63,13 +63,13 @@ class ProfileScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                     decoration: BoxDecoration(
-                      color: AppColors.accent.withValues(alpha: 0.15),
+                      color: theme.colorScheme.primary.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
                       isSentinel ? 'ELITE' : 'PREMIUM',
-                      style: const TextStyle(
-                        color: AppColors.accent,
+                      style: TextStyle(
+                        color: theme.colorScheme.primary,
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 1,
@@ -89,12 +89,12 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.verified, color: AppColors.accent, size: 14),
+                  Icon(Icons.verified, color: theme.colorScheme.primary, size: 14),
                   const SizedBox(width: 4),
                   Text(
                     MockData.profileRole,
                     style: TextStyle(
-                      color: AppColors.accent,
+                      color: theme.colorScheme.primary,
                       fontSize: 12,
                       fontFamily: isSentinel ? 'FiraCode' : null,
                     ),

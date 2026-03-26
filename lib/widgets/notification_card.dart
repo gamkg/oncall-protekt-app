@@ -17,7 +17,7 @@ class NotificationCard extends StatelessWidget {
       case 'success':
         return Colors.green;
       default:
-        return const Color(0xFF00E5CC);
+        return AppColors.statusInfo;
     }
   }
 

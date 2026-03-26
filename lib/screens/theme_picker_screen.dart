@@ -10,15 +10,15 @@ class ThemePickerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0A0A),
+      backgroundColor: const Color(0xFF0B1121),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
-              const SizedBox(height: 48),
+              const SizedBox(height: 32),
               // Logo
-              Image.asset('assets/ocp-logo.png', height: 100),
+              Image.asset('assets/ocp-logo.png', height: 140),
               const SizedBox(height: 24),
               const Text(
                 'ON CALL PROTEKT',
@@ -115,12 +115,12 @@ class _ThemeCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: showGlow ? const Color(0xFF161B22) : const Color(0xFF1A1A1A),
+          color: showGlow ? const Color(0xFF111827) : const Color(0xFF1A2332),
           borderRadius: BorderRadius.circular(showGlow ? 8 : 12),
           border: Border.all(
             color: showGlow
                 ? AppColors.accent.withValues(alpha: 0.3)
-                : const Color(0xFF2A2A2A),
+                : const Color(0x1AFFFFFF),
           ),
           boxShadow: showGlow
               ? [
@@ -181,8 +181,8 @@ class _ThemeCard extends StatelessWidget {
             // Mini color preview
             Row(
               children: [
-                _colorDot(showGlow ? const Color(0xFF0D1117) : const Color(0xFF0A0A0A)),
-                _colorDot(showGlow ? const Color(0xFF161B22) : const Color(0xFF1A1A1A)),
+                _colorDot(showGlow ? const Color(0xFF0B1121) : const Color(0xFF0B1121)),
+                _colorDot(showGlow ? const Color(0xFF111827) : const Color(0xFF1A2332)),
                 _colorDot(AppColors.accent),
                 _colorDot(Colors.white),
                 _colorDot(const Color(0xFF9CA3AF)),

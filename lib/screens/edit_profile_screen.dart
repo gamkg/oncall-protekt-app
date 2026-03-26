@@ -32,7 +32,7 @@ class EditProfileScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: isSentinel
-                        ? Border.all(color: AppColors.accent.withValues(alpha: 0.3), width: 2)
+                        ? Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.3), width: 2)
                         : null,
                   ),
                   child: CircleAvatar(

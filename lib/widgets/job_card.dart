@@ -24,7 +24,7 @@ class JobCard extends StatelessWidget {
   Color _statusColor(String status) {
     switch (status) {
       case 'completed':
-        return const Color(0xFF00E5CC);
+        return AppColors.statusSuccess;
       case 'unserved':
         return Colors.orange;
       case 'cancelled':

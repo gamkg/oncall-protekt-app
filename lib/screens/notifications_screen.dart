@@ -62,7 +62,7 @@ class NotificationsScreen extends StatelessWidget {
                                           : theme.textTheme.bodyMedium?.color,
                                     )),
                                 selected: label == 'All',
-                                selectedColor: AppColors.accent,
+                                selectedColor: theme.colorScheme.primary,
                                 backgroundColor: theme.colorScheme.surface,
                                 side: BorderSide(
                                     color: extras?.cardBorderColor ?? Colors.transparent),
@@ -137,7 +137,7 @@ class NotificationsScreen extends StatelessWidget {
                               Text('${MockData.trustScore}%',
                                   style: theme.textTheme.headlineSmall?.copyWith(
                                     fontSize: 28,
-                                    color: AppColors.accent,
+                                    color: theme.colorScheme.primary,
                                   )),
                               const SizedBox(height: 4),
                               Text('TRUST SCORE',
